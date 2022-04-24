@@ -1,10 +1,14 @@
 {
-  "name": "Getting Started Example",
-  "description": "Build an Extension!",
+  "name": "Facebook messenger media extension",
+  "description": "Extension allow user display video in messenger direct from url.",
   "version": "1.0",
   "manifest_version": 3,
-  "background": {
-    "service_worker": "background.js"
-  },
-  "permissions": ["storage", "activeTab", "scripting"]
+  "content_scripts": [
+    {
+      "matches": ["https://www.facebook.com/messages/*"],
+      "css": [],
+      "js": ["content-script.js"]
+    }
+  ],
+  "permissions": ["storage", "tabs", "scripting", "activeTab"]
 }
